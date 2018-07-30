@@ -1,20 +1,14 @@
 package br.com.rogerthat.conf;
 
+import br.com.rogerthat.controller.HomeController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
-@ComponentScan(basePackages = {"br.com.rogerthat.controller"})
-public class AppWebConfiguration extends WebMvcConfigurerAdapter {
-
-        @Override
-        public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-                configurer.enable();
-        }
+@ComponentScan(basePackageClasses = {HomeController.class})
+public class AppWebConfiguration {
 
         @Bean
         public InternalResourceViewResolver internalResourceViewResolver() {
