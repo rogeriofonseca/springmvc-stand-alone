@@ -1,3 +1,10 @@
+Dockerized: Maven + Tomcat
+============================
+
+Neste exemplo utilizei o conceito de *"multi-stage"* para construir em apenas um único Dockerfile, uma imagem que compila o código fonte e copia os artefatos para um container Tomcat.
+
+Executando exemplo:
+-------------------
 1 - git clone https://github.com/rogeriofonseca/springmvc-stand-alone.git && cd springmvc-stand-alone
 
 2 - Construir e iniciar o container através do comando abaixo:
